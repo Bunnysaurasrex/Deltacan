@@ -1,0 +1,27 @@
+{
+    "image1": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAALu7AACwuwsAK7szM7OyCwC7u3d3s7sLALu7d3ezuwsAu7t3d7e7CwC7uzMzs7sLALu7MzOzuwsAu7t3d7e7CwC7u3d3s7sLALu7d3ezuwsAK7szM7OyCwC7uwAAsLsLAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "mmm nice"
+    },
+    "image2": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiIiICAAAAESEREhIBABAhEiIhIQEAEGEiIiIiAQAQZiYiIiIBABBmJhERIgEAEGEiIRIiAQAQISIiIiIBAAAhIhERIgEAAAAiIRICAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "coke"
+    },
+    "image3": {
+        "data": "hwQQABAAAAAAABAREQEAAAAAEREREQAAAAB3d3Z3AAAAAHZ3ZncAAAAAZ3d2dgAAAABnd3Z2AAAAAGd2ZncAAAAAd3d3dwAAAAB3Z3Z3AAAAABFmZhEAAAAAEGEWAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "sprite"
+    },
+    "image4": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAcAAAAAAAAACQBgAAAAAAAJBmlmYAAAAAAJZpd5YAAABwlnmWaQAAAHCWeWZmBgAAcJZ5lmkAAAAAlml3lgAAAJBmlmYAAAAAkAYAAAAAAABwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "bomb"
+    },
+    "*": {
+        "mimeType": "image/x-mkcd-f4",
+        "dataEncoding": "base64",
+        "namespace": "myImages"
+    }
+}
