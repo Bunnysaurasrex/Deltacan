@@ -1,57 +1,59 @@
-def on_b_pressed():
-    global mySprite3
-    mySprite3 = sprites.create(assets.image("""
-        bomb
-    """), SpriteKind.projectile)
-    music.pew_pew.play()
-    mySprite3.set_velocity(1, 10)
-controller.B.on_event(ControllerButtonEvent.PRESSED, on_b_pressed)
-
 def on_a_pressed():
     global projectile
     music.zapped.play()
     projectile = sprites.create_projectile_from_sprite(img("""
-            . . . . . . . . . . . . . . . . 
-                    . . . . . . . . . . . . . . . . 
-                    . . . . . . 8 . . . . . . . . . 
-                    . . . . . 8 . 8 8 8 . . . . . . 
-                    . . . . . . . 8 1 1 8 . . . . . 
-                    . . . . . . 8 8 9 1 1 9 . . . . 
-                    . . . . . 8 8 9 9 9 1 1 9 . . . 
-                    . . . . 8 8 6 9 9 9 9 1 9 . . . 
-                    . . . 8 8 8 6 9 9 9 9 1 9 . . . 
-                    . . . . 8 8 6 9 9 9 9 1 9 . . . 
-                    . . . . . 8 6 9 9 9 9 1 9 . . . 
-                    . . . . . . 8 9 9 9 1 1 9 . . . 
-                    . . . . . . . 8 9 1 1 9 . . . . 
-                    . . . . . . . 8 1 1 8 . . . . . 
-                    . . . . . . . 8 8 8 . . . . . . 
-                    . . . . . 8 8 . . . . . . . . .
+            . . . . . . . . . . a . . . . . 
+                    . a . . . . . . . . a a . . . . 
+                    . a a . . . 8 . . . . a . . . . 
+                    . . a . . 8 . 8 8 8 . . . . . . 
+                    . . a . . . . 8 1 1 8 . . . . . 
+                    . . . . . . 8 8 9 a a 9 . a . . 
+                    . . . . . 8 8 9 a a a 1 9 a . . 
+                    . . . . 8 8 6 9 9 9 9 1 9 a a . 
+                    . . a a a a 6 9 9 a 9 1 9 . . . 
+                    . . . . 8 8 6 9 a a a 1 9 . . . 
+                    . . . . . 8 6 9 a 9 9 1 9 . . . 
+                    . . . a a . 8 a a 9 1 1 9 . a . 
+                    . . a a . . . 8 a 1 1 9 . . a . 
+                    . . a . . . . 8 1 1 8 . . . . . 
+                    . . a . . . . 8 8 8 a a a . . . 
+                    . a . . . 8 8 . . . a . . . . .
         """),
         mySprite,
         100,
-        50)
+        0)
+    mySprite.start_effect(effects.rings, 200)
 controller.A.on_event(ControllerButtonEvent.PRESSED, on_a_pressed)
 
-def on_countdown_end():
-    game.over(False)
-    music.play_melody("F D C F D C F E ", 95)
-info.on_countdown_end(on_countdown_end)
-
 def on_life_zero():
-    global mySprite2
-    mySprite2 = sprites.create(assets.image("""
-        coke
-    """), SpriteKind.enemy)
+    game.over(False)
 info.on_life_zero(on_life_zero)
 
-mySprite2: Sprite = None
+def on_on_destroyed(sprite):
+    global myEnemy
+    myEnemy = sprites.create(assets.image("""
+        coke
+    """), SpriteKind.enemy)
+sprites.on_destroyed(SpriteKind.player, on_on_destroyed)
+
+def on_on_overlap(sprite2, otherSprite):
+    otherSprite.destroy(effects.ashes, 500)
+    info.change_score_by(2)
+sprites.on_overlap(SpriteKind.projectile, SpriteKind.enemy, on_on_overlap)
+
+def on_on_overlap2(sprite3, otherSprite2):
+    mySprite.destroy(effects.confetti, 500)
+    scene.camera_shake(4, 500)
+    info.change_life_by(-1)
+sprites.on_overlap(SpriteKind.player, SpriteKind.enemy, on_on_overlap2)
+
+myEnemy: Sprite = None
 projectile: Sprite = None
-mySprite3: Sprite = None
 mySprite: Sprite = None
 mySprite = sprites.create(assets.image("""
     sprite
 """), SpriteKind.player)
+mySprite.set_stay_in_screen(True)
 game.set_dialog_text_color(6)
 game.show_long_text("Welcome adventurer, this world is cursed by the divine and I need your help to stop them. Will you except this quest?",
     DialogLayout.TOP)
@@ -74,9 +76,7 @@ game.set_dialog_frame(img("""
 """))
 scene.camera_shake(8, 5000)
 controller.move_sprite(mySprite)
-info.set_life(5)
-info.set_score(0)
-info.change_life_by(-1)
+info.set_life(1)
 scene.set_background_image(img("""
     ccccccccccccccccccccccccccccccccccccccccccccccc5555555555555555555555555555555555555555555555555555555555ccccccccccccccccccccccccccccccccccccccccccccccccccccccc
         ccccccccccccccccccccccccccccccccccccccccccc555555555555555555555555555555555555555555555555555555555555555cccccccccccccccccccccccccccccccccccccccccccccccccccccc
@@ -199,12 +199,18 @@ scene.set_background_image(img("""
         ccccccccccfcccccccccccccccccccccccffffffffffffffffffffffffffffffffffffffffffffffffffffaafffffffffffffffffffffffffffffffffffffccfffffcccccccccccccfcccccccccccccc
         ccccccccccfccccccccccccccccccccccffffffffffffffffffffffffffffffffffffffffffffffffffffaaffffffffffffffffffffffffffffffffffffffffffffffffccccccccccfcccccccccccccc
 """))
-info.start_countdown(5)
+info.set_score(0)
+
+def on_update_interval():
+    global myEnemy
+    myEnemy = sprites.create(assets.image("""
+        coke
+    """), SpriteKind.enemy)
+    myEnemy.set_velocity(-100, 0)
+    myEnemy.set_position(160, randint(5, 115))
+    myEnemy.set_flag(SpriteFlag.AUTO_DESTROY, True)
+game.on_update_interval(1000, on_update_interval)
 
 def on_forever():
     music.play_melody("E F A C5 E C5 C A ", 200)
 forever(on_forever)
-
-def on_update_interval():
-    pass
-game.on_update_interval(500, on_update_interval)

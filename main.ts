@@ -1,33 +1,34 @@
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     music.zapped.play()
     projectile = sprites.createProjectileFromSprite(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . 8 . . . . . . . . . 
-        . . . . . 8 . 8 8 8 . . . . . . 
-        . . . . . . . 8 1 1 8 . . . . . 
-        . . . . . . 8 8 9 1 1 9 . . . . 
-        . . . . . 8 8 9 9 9 1 1 9 . . . 
-        . . . . 8 8 6 9 9 9 9 1 9 . . . 
-        . . . 8 8 8 6 9 9 9 9 1 9 . . . 
-        . . . . 8 8 6 9 9 9 9 1 9 . . . 
-        . . . . . 8 6 9 9 9 9 1 9 . . . 
-        . . . . . . 8 9 9 9 1 1 9 . . . 
-        . . . . . . . 8 9 1 1 9 . . . . 
-        . . . . . . . 8 1 1 8 . . . . . 
-        . . . . . . . 8 8 8 . . . . . . 
-        . . . . . 8 8 . . . . . . . . . 
-        `, mySprite, 100, 50)
+        . . . . . . . . . . a . . . . . 
+        . a . . . . . . . . a a . . . . 
+        . a a . . . 8 . . . . a . . . . 
+        . . a . . 8 . 8 8 8 . . . . . . 
+        . . a . . . . 8 1 1 8 . . . . . 
+        . . . . . . 8 8 9 a a 9 . a . . 
+        . . . . . 8 8 9 a a a 1 9 a . . 
+        . . . . 8 8 6 9 9 9 9 1 9 a a . 
+        . . a a a a 6 9 9 a 9 1 9 . . . 
+        . . . . 8 8 6 9 a a a 1 9 . . . 
+        . . . . . 8 6 9 a 9 9 1 9 . . . 
+        . . . a a . 8 a a 9 1 1 9 . a . 
+        . . a a . . . 8 a 1 1 9 . . a . 
+        . . a . . . . 8 1 1 8 . . . . . 
+        . . a . . . . 8 8 8 a a a . . . 
+        . a . . . 8 8 . . . a . . . . . 
+        `, mySprite, 100, 0)
     mySprite.startEffect(effects.rings, 200)
 })
 info.onLifeZero(function () {
     game.over(false)
 })
 sprites.onDestroyed(SpriteKind.Player, function (sprite) {
-    mySprite2 = sprites.create(assets.image`coke`, SpriteKind.Enemy)
+    myEnemy = sprites.create(assets.image`coke`, SpriteKind.Enemy)
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     otherSprite.destroy(effects.ashes, 500)
+    info.changeScoreBy(2)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     mySprite.destroy(effects.confetti, 500)
@@ -35,7 +36,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     info.changeLifeBy(-1)
 })
 let myEnemy: Sprite = null
-let mySprite2: Sprite = null
 let projectile: Sprite = null
 let mySprite: Sprite = null
 mySprite = sprites.create(assets.image`sprite`, SpriteKind.Player)
@@ -44,20 +44,20 @@ game.setDialogTextColor(6)
 game.showLongText("Welcome adventurer, this world is cursed by the divine and I need your help to stop them. Will you except this quest?", DialogLayout.Top)
 game.setDialogFrame(img`
     a a a a a a a a a a a a a a a 
-    a a a 5 a a 5 5 a a 5 a a a a 
-    a a 5 a a 5 5 5 5 a a 5 a a a 
-    a a a a 5 a a a a 5 a a a a a 
-    a a a a 5 a a a a 5 a a a a a 
-    a a 5 a a 5 5 5 5 a a 5 a a a 
-    a a a 5 a a 5 5 a a 5 a a a a 
-    a a a 5 a a 5 5 a a 5 a a a a 
+    a a a 5 c c 5 5 c c 5 a a a a 
+    a a 5 c a 5 5 5 5 a c 5 a a a 
+    a a c c 5 3 c c 3 5 c c a a a 
+    a a c c 5 3 c c 3 5 c c a a a 
+    a a 5 c a 5 5 5 5 a c 5 a a a 
+    a a a 5 c c 5 5 c c 5 a a a a 
+    a a c 5 a a 5 5 a a 5 c a a a 
     a a 5 5 a a 5 5 a a 5 5 a a a 
-    a 5 5 a a a 5 5 a a a 5 5 a a 
-    5 5 a a a a 5 5 a a a a 5 5 a 
+    c 5 5 c c c 5 5 c c c 5 5 a a 
+    5 5 a a a c 5 5 c a a a 5 5 c 
     5 a a 5 5 5 5 5 5 5 5 a a 5 5 
-    a a a a 5 5 5 5 5 5 a a a a 5 
-    a a a a a 5 5 5 5 a a a a a a 
-    a a a a a a 5 5 a a a a a a a 
+    c a a c 5 5 5 5 5 5 c a a a 5 
+    a a a a a 5 5 5 5 a a a a a c 
+    a a a a a c 5 5 c a a a a a a 
     `)
 scene.cameraShake(8, 5000)
 controller.moveSprite(mySprite)
@@ -184,6 +184,7 @@ scene.setBackgroundImage(img`
     ccccccccccfcccccccccccccccccccccccffffffffffffffffffffffffffffffffffffffffffffffffffffaafffffffffffffffffffffffffffffffffffffccfffffcccccccccccccfcccccccccccccc
     ccccccccccfccccccccccccccccccccccffffffffffffffffffffffffffffffffffffffffffffffffffffaaffffffffffffffffffffffffffffffffffffffffffffffffccccccccccfcccccccccccccc
     `)
+info.setScore(0)
 game.onUpdateInterval(1000, function () {
     myEnemy = sprites.create(assets.image`coke`, SpriteKind.Enemy)
     myEnemy.setVelocity(-100, 0)
