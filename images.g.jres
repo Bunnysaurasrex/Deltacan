@@ -9,25 +9,25 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "bomb"
     },
-    "image3": {
-        "data": "hwQQABAAAAAAbBAREQEKDKCgEREREQBqAGB3d3Z3oADAAHZ3ZncMAAYKZ3d2dgAKAABnd3Z2DAagwGd2ZncAAGAKd3d3d8AKAAB3Z3Z3oAAArBFmZhEAYACmEGEWAQAMAAAKoACgoAAAAAAKoMAKAAAAwAAGAGAAAAAAAAAAAAAAAAAAAAAAAA==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "sprite"
-    },
-    "image2": {
-        "data": "hwQQABAAAADr7u6+7A4LC+Duu7u76+6wAO67vLy7yw7uu7siIiKy6768ESEREhLh7hshEiIhIeHuG2EiIiIi4e4bZiYiIiLh6xtmJhERIuHgG2EiIRIi4eAeISIiIiLh7rshIhERIuHuvrwiIRKy67Dgu7u7y+vuAAvuu8u77gsL4O7u7u7usA==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "coke"
-    },
     "image5": {
         "data": "hwQQABAAAAAAAERRVVUEAAAAFBUVEUQAAFFEFFFVQQAAEVVEFBEUAQBQERERFREAAFBVUVVRVQAQVVVREVFVABARURERVVUVEFERVVEVEREQERUREREVAVBVEVVVVVUFUVUVVVVVVRERURERVRURUVARURURERVVUBVVVRFREVVQFVFVVVVRVQ==",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "Final Flash"
     },
     "image6": {
-        "data": "hwQQABAAAAAAABGZmZkZAQAAGRGRmREAEJCZmZEZkRkQmZmZERGZGZARmZkZmZkZmRmZmRGRGZGZGZEZmZERmZkZmRGZGZGZmRkRmRkRkZmZGZGZGZkZmZmRERmRmRmREZEZEZmZmREBmREZmZmZGQCQkRmRmZkZABGZmZGZmRAAAJCZEZkJAA==",
+        "data": "hwQQABAAAAAAAABQAAAABVAAAFUFBQAAAFAAVQUAUAAAAVAVVQABUAAAUBFRAAAABRBQEVEQAAUAAFARUQBQBVAQUBFREFAFUAUBVQUBFVFQBQAAAAAVURVRAAAQABVRFVEQAAABFVEVUQAAABBQBVAFEAAAAAAQAQABAAAAEAAAAAAAAAAAAA==",
         "mimeType": "image/x-mkcd-f4",
-        "displayName": "Big Bang"
+        "displayName": "Key Blast"
+    },
+    "image2": {
+        "data": "hwQQABAAAAAAAMAAAaAAAACgAAEAAQAAAAAAAAEAoAAACgEQHxAAAAAQUBEZAQAAAAGVER8BAQoAAFURGQEQABAAlREZwQAAAApVER8BAAEAAJURGQEKAAwBUBEfAQAAAAAAERkBDAEAAAAQHwAAAACgAAABAAAAwAAADAAKAAwAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Frezzer ship"
+    },
+    "image3": {
+        "data": "hwQQABAAAAAVWVVRWVVZBRmZEZEZERlRVZWZlRGZmVERVZWZmRmRkRVRVd2ZGZiZUVlVjfnZjVEVmVmd+fmNUVFVmZn9mY1RFVGV3f2SiVFRlZmN/ZmZUZlVWd2dGZhRkZlZ1Z2RkVkVlZnVmZkRmVmRmREZkRlRFZmRmRGRUVVQVVVZVVUFAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "ssj2 Vegeta"
     },
     "*": {
         "mimeType": "image/x-mkcd-f4",

@@ -1,7 +1,7 @@
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     music.beamUp.play()
     mySprite.startEffect(effects.fire, 200)
-    projectile2 = sprites.createProjectileFromSprite(assets.image`Big Bang`, mySprite, 100, 1)
+    projectile2 = sprites.createProjectileFromSprite(assets.image`Key Blast`, mySprite, 100, 1)
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     music.zapped.play()
@@ -12,7 +12,7 @@ info.onLifeZero(function () {
     game.over(false)
 })
 sprites.onDestroyed(SpriteKind.Player, function (sprite) {
-    myEnemy = sprites.create(assets.image`coke`, SpriteKind.Enemy)
+    myEnemy = sprites.create(assets.image`Frezzer ship`, SpriteKind.Enemy)
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     otherSprite.destroy(effects.ashes, 500)
@@ -28,10 +28,10 @@ let projectile: Sprite = null
 let projectile2: Sprite = null
 let mySprite: Sprite = null
 info.setLife(1)
-mySprite = sprites.create(assets.image`sprite`, SpriteKind.Player)
+mySprite = sprites.create(assets.image`ssj2 Vegeta`, SpriteKind.Player)
 mySprite.setStayInScreen(true)
 game.setDialogTextColor(6)
-game.showLongText("Welcome adventurer, this world is cursed by the divine and I need your help to stop them. Will you except this quest?", DialogLayout.Top)
+game.showLongText("Welcome adventurer, this world is cursed by the frezzer force and I need your help to stop them. Will you except this parallel quest?", DialogLayout.Top)
 game.setDialogFrame(img`
     a a a a a a a a a a a a a a a 
     a a a 5 c c 5 5 c c 5 a a a a 
@@ -175,7 +175,7 @@ scene.setBackgroundImage(img`
 info.setScore(0)
 controller.moveSprite(mySprite)
 game.onUpdateInterval(1000, function () {
-    myEnemy = sprites.create(assets.image`coke`, SpriteKind.Enemy)
+    myEnemy = sprites.create(assets.image`Frezzer ship`, SpriteKind.Enemy)
     myEnemy.setVelocity(-100, 0)
     myEnemy.setPosition(160, randint(5, 115))
     myEnemy.setFlag(SpriteFlag.AutoDestroy, true)
