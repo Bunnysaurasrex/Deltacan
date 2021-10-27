@@ -19,6 +19,16 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "coke"
     },
+    "image5": {
+        "data": "hwQQABAAAAAAAERRVVUEAAAAFBUVEUQAAFFEFFFVQQAAEVVEFBEUAQBQERERFREAAFBVUVVRVQAQVVVREVFVABARURERVVUVEFERVVEVEREQERUREREVAVBVEVVVVVUFUVUVVVVVVRERURERVRURUVARURURERVVUBVVVRFREVVQFVFVVVVRVQ==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Final Flash"
+    },
+    "image6": {
+        "data": "hwQQABAAAAAAABGZmZkZAQAAGRGRmREAEJCZmZEZkRkQmZmZERGZGZARmZkZmZkZmRmZmRGRGZGZGZEZmZERmZkZmRGZGZGZmRkRmRkRkZmZGZGZGZkZmZmRERmRmRmREZEZEZmZmREBmREZmZmZGQCQkRmRmZkZABGZmZGZmRAAAJCZEZkJAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Big Bang"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",

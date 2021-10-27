@@ -1,23 +1,11 @@
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    music.beamUp.play()
+    mySprite.startEffect(effects.fire, 200)
+    projectile2 = sprites.createProjectileFromSprite(assets.image`Big Bang`, mySprite, 100, 1)
+})
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     music.zapped.play()
-    projectile = sprites.createProjectileFromSprite(img`
-        . . . . . . . . . . a . . . . . 
-        . a . . . . . . . . a a . . . . 
-        . a a . . . 8 . . . . a . . . . 
-        . . a . . 8 . 8 8 8 . . . . . . 
-        . . a . . . . 8 1 1 8 . . . . . 
-        . . . . . . 8 8 9 a a 9 . a . . 
-        . . . . . 8 8 9 a a a 1 9 a . . 
-        . . . . 8 8 6 9 9 9 9 1 9 a a . 
-        . . a a a a 6 9 9 a 9 1 9 . . . 
-        . . . . 8 8 6 9 a a a 1 9 . . . 
-        . . . . . 8 6 9 a 9 9 1 9 . . . 
-        . . . a a . 8 a a 9 1 1 9 . a . 
-        . . a a . . . 8 a 1 1 9 . . a . 
-        . . a . . . . 8 1 1 8 . . . . . 
-        . . a . . . . 8 8 8 a a a . . . 
-        . a . . . 8 8 . . . a . . . . . 
-        `, mySprite, 100, 0)
+    projectile = sprites.createProjectileFromSprite(assets.image`Final Flash`, mySprite, 100, 0)
     mySprite.startEffect(effects.fire, 200)
 })
 info.onLifeZero(function () {
@@ -37,7 +25,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 let myEnemy: Sprite = null
 let projectile: Sprite = null
+let projectile2: Sprite = null
 let mySprite: Sprite = null
+info.setLife(1)
 mySprite = sprites.create(assets.image`sprite`, SpriteKind.Player)
 mySprite.setStayInScreen(true)
 game.setDialogTextColor(6)
@@ -60,8 +50,6 @@ game.setDialogFrame(img`
     a a a a a c 5 5 c a a a a a a 
     `)
 scene.cameraShake(8, 5000)
-controller.moveSprite(mySprite)
-info.setLife(1)
 scene.setBackgroundImage(img`
     ccccccccccccccccccccccccccccccccccccccccccccccc5555555555555555555555555555555555555555555555555555555555ccccccccccccccccccccccccccccccccccccccccccccccccccccccc
     ccccccccccccccccccccccccccccccccccccccccccc555555555555555555555555555555555555555555555555555555555555555cccccccccccccccccccccccccccccccccccccccccccccccccccccc
@@ -185,6 +173,7 @@ scene.setBackgroundImage(img`
     ccccccccccfccccccccccccccccccccccffffffffffffffffffffffffffffffffffffffffffffffffffffaaffffffffffffffffffffffffffffffffffffffffffffffffccccccccccfcccccccccccccc
     `)
 info.setScore(0)
+controller.moveSprite(mySprite)
 game.onUpdateInterval(1000, function () {
     myEnemy = sprites.create(assets.image`coke`, SpriteKind.Enemy)
     myEnemy.setVelocity(-100, 0)
