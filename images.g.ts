@@ -98,25 +98,6 @@ a . . 1 . . . c . . . . . . . .
 . . . . . a . . 1 . . 1 . . c . 
 . . . . . . . . . . . . . . . . 
 `;
-            case "image3":
-            case "ssj2 Vegeta":return img`
-5 9 5 1 5 1 5 1 5 1 9 1 5 9 5 . 
-1 1 5 1 1 5 1 5 1 5 9 9 1 5 1 5 
-9 9 5 5 1 9 9 5 1 5 5 9 5 1 9 5 
-5 9 9 5 5 5 9 5 5 9 5 9 9 9 9 5 
-5 1 9 5 5 5 9 9 5 9 9 9 9 9 1 5 
-5 1 9 9 5 5 5 9 9 9 5 5 9 9 9 5 
-1 1 5 9 d d d 9 d d d 5 5 1 9 9 
-5 9 9 9 d 8 9 9 d 8 d d d 1 9 5 
-9 9 1 9 9 9 9 d d d d d 9 9 1 5 
-5 1 1 9 9 f f f f f 9 9 9 1 1 5 
-5 1 9 9 9 9 9 9 2 9 9 1 9 1 1 5 
-5 1 9 1 1 d f 9 9 9 1 9 9 9 9 5 
-9 9 9 1 8 d d d 9 9 8 1 1 9 1 5 
-5 1 9 9 9 8 8 8 8 9 9 9 1 1 5 . 
-5 1 1 1 9 1 1 1 1 1 1 9 9 1 5 . 
-. 5 5 9 9 5 5 5 5 5 5 5 9 5 5 . 
-`;
             case "image7":
             case "Destroyed Namek":return img`
 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
@@ -362,6 +343,25 @@ ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+`;
+            case "image3":
+            case "ssj2 Vegeta":return img`
+8 8 8 8 1 1 1 1 1 1 1 5 5 . 4 . 
+8 8 8 8 8 1 1 5 1 4 1 1 4 5 . . 
+8 8 8 8 8 1 1 1 1 1 1 1 4 5 5 . 
+8 8 8 8 1 1 4 1 1 1 1 4 4 5 1 5 
+. . 5 . . 4 . . . 1 4 4 4 4 1 . 
+. . . . . . 5 5 5 5 1 5 5 1 1 4 
+8 8 1 1 1 1 1 1 4 5 1 1 1 1 5 4 
+8 8 8 1 5 1 1 1 1 4 5 1 1 1 5 4 
+8 8 8 1 1 4 1 1 1 4 1 1 5 1 5 4 
+8 8 5 1 1 1 1 1 4 1 1 5 1 1 4 4 
+. . . 4 . . . 5 1 1 5 4 5 4 4 5 
+8 8 8 8 8 8 8 8 1 1 1 1 1 1 4 5 
+8 8 8 8 8 8 8 8 8 1 1 4 1 5 1 5 
+8 8 8 8 8 8 8 8 8 1 5 1 1 1 1 5 
+8 8 8 8 8 8 8 8 1 1 4 1 1 1 4 5 
+. . . . . 4 . . 4 . . . 5 5 5 . 
 `;
         }
         return null;
